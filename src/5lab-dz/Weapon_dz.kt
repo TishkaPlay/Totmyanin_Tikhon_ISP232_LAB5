@@ -1,4 +1,4 @@
-/*class Weapon_dz {
+package `5lab-dz`/*class Weapon_dz {
     var name: String = "Оружие"
     var damage: Int = 10
     var durability: Int = 100

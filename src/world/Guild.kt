@@ -1,5 +1,14 @@
+package world
+
 /*fun main() {
-    val quest = Quest()
+    val exit = Quest(title = "Побег из замка", 5, 700, "Сложный")
+    println("Квест сложный? - ${exit.isHard()}")
+    val quest = Quest(title = "Охота на гоблинов", 2, 3400, "легкий")
+    quest.printInfo()
+    val gold1 = Quest("Охота", 2, 300, "Средний")
+    println(gold1.goldPerHour())
+    val gold2 = Quest("Рыбалка", 0, 500, "Лёгкий")
+    println(gold2.goldPerHour())
 
     println("Введите название квеста: ")
     val title = readln()
@@ -10,14 +19,11 @@
     println("Введите уровень сложности: ")
     val difficulty = readln()
 
-    quest.init(title, duration, reward, difficulty)
-    quest.printInfo()
-
     val quests = mutableListOf<Quest>()
 
     for (i in 1..3) {
         println("Добавим квест #$i")
-        val q = Quest()
+        val q = Quest(title = "Охота на гоблинов", 2, 3400, "легкий")
         print("Название: ")
         val title = readln()
         print("Время (ч): ")
@@ -27,7 +33,6 @@
         print("Сложность: ")
         val difficulty = readln()
 
-        q.init(title, duration, reward, difficulty)
         quests.add(q)
         println()
 

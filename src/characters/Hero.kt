@@ -1,11 +1,23 @@
-/*class Hero {
-    var name: String = "Неизвестный"
-    var gender: String = "Не указан"
-    var role: String = "Бродяга"
-    var hp: Int = 100
-    var mp: Int = 50
-    var lvl: Int = 50
-    var st: String = "Неизвестно"
+package characters
+
+import magic.Spell
+import world.Quest
+
+class Hero(
+    var name: String,
+    var gender: String,
+    var role: String,
+    var lvl: Int,
+    var st: String,
+    var hp: Int,
+    var mp: Int
+) {
+
+    fun canCast(spell: Spell): Boolean{
+        val len = spell.namee.length <= lvl * 2
+        val s = spell.w2 <= 5 && spell.h <= 5
+        return len && s
+    }
 
     fun sayHello() {
         println("Я - $name, мой путь только начинается!")
@@ -49,11 +61,11 @@
         println("Герой $name умер!")
     }
     fun attack(enemy: Enemy, damage: Int) {
-        println("$name атакует врага ${enemy.name}!")
+        println("$name атакует врага ${enemy.nname}!")
         enemy.takeDamage(damage)
     }
     fun castSpellOn(enemy: Enemy, spellName: String, damage: Int) {
-        println("$name использует заклинание '$spellName' против ${enemy.name}!")
+        println("$name использует заклинание '$spellName' против ${enemy.nname}!")
 
         if (st == enemy.st) {
             println("Стихии совпадают! Урон снижен.")
@@ -80,4 +92,29 @@
         this.showStats()
         opponent.showStats()
     }
-}*/
+
+    fun isAlive(): Boolean {
+        return hp > 0
+    }
+
+    fun canAcceptQuest(quest: Quest): Boolean {
+        val canAccept = when (quest.difficulty.lowercase()) {
+            "лёгкий" -> lvl >= 1
+            "средний" -> lvl >= 3
+            "сложный" -> lvl >= 5
+            else -> false
+        }
+
+        if (canAccept) {
+            println("$name может принять квест <<${quest.title}>>!")
+        } else {
+            println("$name не может принять квест <<${quest.title}>>. Требуется более высокий уровень.")
+        }
+        return canAccept
+    }
+
+
+
+
+
+}

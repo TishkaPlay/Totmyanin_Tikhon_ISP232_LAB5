@@ -1,4 +1,4 @@
-/*class Student_dz {
+package `5lab-dz`/*class Student_dz {
     var name: String = "Неизвестно"
     var age: Int = 0
 

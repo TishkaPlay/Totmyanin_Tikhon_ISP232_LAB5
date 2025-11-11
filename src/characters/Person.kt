@@ -1,27 +1,40 @@
-/*fun main() {
-    val naruto: Hero = Hero()
-    naruto.name = "Наруто"
-    naruto.role = "Шиноби"
-    naruto.st = "Ветер"
-    naruto.mp = 100
+package characters
 
-    val kakashi: Hero = Hero()
-    kakashi.name = "Какаши"
-    kakashi.role = "Шиноби"
-    kakashi.st = "Молния"
-    kakashi.mp = 100
+import world.Quest
 
-    val orochimaru: Enemy = Enemy()
-    orochimaru.name = "Орочимару"
-    orochimaru.st = "Ветер"
+fun main() {
+    val hero1 = Hero("Артур", "мужской", "оружейник", 4, "Вода", 30, 30)
+    println("Герой жив? - ${hero1.isAlive()}")
+    val easyQuest = Quest("Сбор трав",2,100,"лёгкий")
+    val hardQuest = Quest("Охота на дракона", 10, 1000, "сложный")
+    val hero2 = Hero("Артур", "мужской", "оружейник", 4, "Вода", 0, 50)
+    println("Герой жив? - ${hero2.isAlive()}")
 
+    hero1.canAcceptQuest(easyQuest)
+    hero2.canAcceptQuest(hardQuest)
+
+    val enemy1 = Enemy("Гоблин", 30, "Огонь")
+    println(enemy1.getThreatLevel())
+    val enemy2 = Enemy("Орк", 100, "Вода")
+    println(enemy2.getThreatLevel())
+    val enemy3 = Enemy("Дракон", 200, "Пыль")
+    println(enemy3.getThreatLevel())
+    val enemy4 = Enemy("Тишка", -2100, "Земля")
+    println(enemy4.getThreatLevel())
+
+
+/*    val naruto: characters.Hero = characters.Hero("Наруто", gender = "мужской", "Шиноби", 5,"Ветер",150,200)
+    naruto.showStats()
+    val kakashi: characters.Hero = characters.Hero("Какаши","мужской", "Шиноби",15,"Молния",250,300)
+    kakashi.showStats()
+    val orochimaru: characters.Enemy = characters.Enemy("Орочимару", 350, "Ветер")
     naruto.castSpellOn(orochimaru, "Расенган", 30)
     naruto.duel(kakashi)
 
     println("Наруто увидел врага ${orochimaru.name}! Его здоровье - ${orochimaru.hp}")
     naruto.attack(orochimaru, 25)
 
-    val naruto: Hero = Hero()
+    val naruto: characters.Hero = characters.Hero()
     naruto.name = "Наруто Узумаки"
     naruto.gender = "Мужской"
     naruto.role = "Хокаге"
@@ -29,7 +42,7 @@
     naruto.mp = 150
     println("Имя: ${naruto.name} \nПол: ${naruto.gender} \nКласс: ${naruto.role}\nЗдоровье: ${naruto.hp}\nМана: ${naruto.mp}")
     println()
-    val sasuke: Hero = Hero()
+    val sasuke: characters.Hero = characters.Hero()
     sasuke.name = "Саске Учиха"
     sasuke.gender = "Мужской"
     sasuke.role = "Шиноби-отступник"
@@ -37,7 +50,7 @@
     sasuke.mp = 180
     println("Имя: ${sasuke.name} \nПол: ${sasuke.gender} \nКласс: ${sasuke.role}\nЗдоровье: ${sasuke.hp}\nМана: ${sasuke.mp}")
     println()
-    val godjo: Hero = Hero()
+    val godjo: characters.Hero = characters.Hero()
     godjo.name = "Годжо Сатору"
     godjo.gender = "Мужской"
     godjo.role = "Маг Проклятий"
@@ -46,7 +59,7 @@
     println("Имя: ${godjo.name} \nПол: ${godjo.gender} \nКласс: ${godjo.role}\nЗдоровье: ${godjo.hp}\nМана: ${godjo.mp}")
     println()
 
-    val hero: Hero = Hero()
+    val hero: characters.Hero = characters.Hero()
     hero.takeDamage(30)
     hero.takeDamage(20)
     hero.greet(name = hero.name)
@@ -73,5 +86,5 @@
     hero.castSpell()
     hero.heal()
     hero.die()
-
-}*/
+*/
+}

@@ -1,4 +1,4 @@
-/*class Group_dz {
+package `5lab-dz`/*class Group_dz {
     var groupName: String = "Неизвестно"
     var students = mutableListOf<Student_dz>()
 

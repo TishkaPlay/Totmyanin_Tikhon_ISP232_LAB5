@@ -1,5 +1,5 @@
-//Задание 1
-/*fun main() {
+package `5lab-dz`//Задание 1
+/*fun characters.items.world.magic.main() {
     var weapon: Weapon_dz = Weapon_dz()
     weapon.name = "Меч"
     weapon.durability = 10
@@ -15,7 +15,7 @@
 }*/
 
 //Задание 2
-/*fun main() {
+/*fun characters.items.world.magic.main() {
     val student1: Student_dz = Student_dz()
 
     student1.name = "Тихон"
@@ -37,7 +37,7 @@
 }*/
 
 //Задание 4
-/*fun main() {
+/*fun characters.items.world.magic.main() {
     val geometry: GeometryCalculator_dz = GeometryCalculator_dz()
     println("=== ПРЯМОУГОЛЬНИКИ ===")
 

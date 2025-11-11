@@ -1,4 +1,4 @@
-/*class GeometryCalculator_dz {
+package `5lab-dz`/*class GeometryCalculator_dz {
     fun rectangleInfo(w: Int, h: Int) {
         val perimeter = 2 * ( w + h)
         val area = w * h
