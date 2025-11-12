@@ -3,7 +3,7 @@ package characters
 import world.Quest
 
 fun main() {
-    val hero1 = Hero("Артур", "мужской", "оружейник", 4, "Вода", 30, 30)
+/*    val hero1 = Hero("Артур", "мужской", "оружейник", 4, "Вода", 30, 30)
     println("Герой жив? - ${hero1.isAlive()}")
     val easyQuest = Quest("Сбор трав",2,100,"лёгкий")
     val hardQuest = Quest("Охота на дракона", 10, 1000, "сложный")
@@ -23,7 +23,7 @@ fun main() {
     println(enemy4.getThreatLevel())
 
 
-/*    val naruto: characters.Hero = characters.Hero("Наруто", gender = "мужской", "Шиноби", 5,"Ветер",150,200)
+    val naruto: characters.Hero = characters.Hero("Наруто", gender = "мужской", "Шиноби", 5,"Ветер",150,200)
     naruto.showStats()
     val kakashi: characters.Hero = characters.Hero("Какаши","мужской", "Шиноби",15,"Молния",250,300)
     kakashi.showStats()
@@ -86,5 +86,26 @@ fun main() {
     hero.castSpell()
     hero.heal()
     hero.die()
+
+//Лаба 7
+    val blacksmith = NPC("Кузнец Ульфрик", hasQuest = true)
+    println(blacksmith.giveQuest())
+    blacksmith.trade()
+
+
+    val dragon = Boss("Алдуин", 500, "Огонь", phaseCount = 4, true)
+    dragon.startPhase(2)
+    println(dragon.dropLoot())
+    dragon.takeDamage(150)
+
 */
+    val enemy: GameCharacter = Enemy("Джин")
+    val hero: GameCharacter = Hero("Наруто")
+    val npc: GameCharacter = NPC("Торговец")
+
+    (enemy as Enemy).takeDamage(20)
+    enemy.takeDamage(20)
+    println(enemy.name)
+
+
 }

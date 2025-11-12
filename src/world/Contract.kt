@@ -1,15 +1,16 @@
 package world
 
-/*class Contract(
+class Contract(
+    title: String,
     val clientNane: String,
     val taskDescription: String,
-    val rew: Int,
+    reward: Int,
     val isUrgent: Boolean = false
-){
+): Mission(title,reward){
     fun printContractInfo() {
         println("Заказчик: $clientNane")
         println("Задача: $taskDescription")
-        println("Награда: $rew")
+        println("Награда: $reward")
         println("Срочность: ${if (isUrgent) "Срочно!" else "Обчный контракт"}")
     }
-}*/
+}

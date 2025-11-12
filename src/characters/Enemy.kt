@@ -1,14 +1,13 @@
 package characters
 
-class Enemy(
-    var nname: String,
-    var hp: Int,
-    var st: String,
-    val aggressionLvL: Int = 2
-) {
+open class Enemy(
+    name: String,
+    hp: Int = 0,
+    element: String = "Неизвестный"
+) : GameCharacter(name, hp, element){
 
     fun takeDamage(amount: Int){
-        println("$nname получает $amount урона!")
+        println("$name получает $amount урона!")
         hp -= amount
         if (hp < 0) hp = 0
         println("Осталось HP врага: $hp")
@@ -28,7 +27,7 @@ class Enemy(
     }
 
     fun calculatePower(): Int{
-        val power = hp * aggressionLvL
+        val power = hp * 2
         return power
     }
 }

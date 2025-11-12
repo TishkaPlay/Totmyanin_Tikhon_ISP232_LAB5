@@ -1,7 +1,24 @@
 package world
 
-/*fun main() {
-    val exit = Quest(title = "Побег из замка", 5, 700, "Сложный")
+fun main() {
+    val quest = Quest("Поиск артефакта", 3, 800, "Средний")
+    val contract = Contract("Защита каравана", "Гильдия купцов", "Охрана груза", 1200)
+    val specialOp = SpecialOperation("Операция - 'Тень'",2500, 2, isCovert = true)
+
+    println("Информация о квесте:")
+    println("Название: ${quest.title}, Награда: ${quest.reward}")
+
+    println("\nИнформация о контракте:")
+    println("Название: ${quest.title}, Награда: ${quest.reward}")
+
+    println("\nИнформация о контракте:")
+    println("Название: ${contract.title}, Заказчик: ${quest.reward}")
+
+    println("\nИнформация о спецоперации:")
+    println("Название: ${specialOp.title}")
+    specialOp.showReward()
+
+    /*val exit = Quest(title = "Побег из замка", 5, 700, "Сложный")
     println("Квест сложный? - ${exit.isHard()}")
     val quest = Quest(title = "Охота на гоблинов", 2, 3400, "легкий")
     quest.printInfo()
@@ -40,5 +57,5 @@ package world
         for (q in quests) {
             q.printInfo()
         }
-    }
-}*/
+    }*/
+}

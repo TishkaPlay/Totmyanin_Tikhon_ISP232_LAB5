@@ -4,17 +4,18 @@ import magic.Spell
 import world.Quest
 
 class Hero(
-    var name: String,
-    var gender: String,
-    var role: String,
-    var lvl: Int,
-    var st: String,
-    var hp: Int,
-    var mp: Int
-) {
+    name: String,
+    var gender: String = "Неизвестный",
+    var role: String = "Неизвестный",
+    var lvl: Int = 0,
+    element: String = "Неизвестный",
+    hp: Int = 0,
+    var mp: Int = 0,
+    val experience: Int = 0
+): GameCharacter(name, hp, element) {
 
     fun canCast(spell: Spell): Boolean{
-        val len = spell.namee.length <= lvl * 2
+        val len = spell.name.length <= lvl * 2
         val s = spell.w2 <= 5 && spell.h <= 5
         return len && s
     }
@@ -23,7 +24,7 @@ class Hero(
         println("Я - $name, мой путь только начинается!")
     }
     fun showStats() {
-        println("Имя: $name | Класс: $role | HP: $hp | MP: $mp | Level: $lvl, | Element: $st")
+        println("Имя: $name | Класс: $role | HP: $hp | MP: $mp | Level: $lvl, | Element: $element")
     }
     fun meditate() {
         println("$name медитирует...")
@@ -61,13 +62,13 @@ class Hero(
         println("Герой $name умер!")
     }
     fun attack(enemy: Enemy, damage: Int) {
-        println("$name атакует врага ${enemy.nname}!")
+        println("$name атакует врага ${enemy.name}!")
         enemy.takeDamage(damage)
     }
     fun castSpellOn(enemy: Enemy, spellName: String, damage: Int) {
-        println("$name использует заклинание '$spellName' против ${enemy.nname}!")
+        println("$name использует заклинание '$spellName' против ${enemy.name}!")
 
-        if (st == enemy.st) {
+        if (element == enemy.element) {
             println("Стихии совпадают! Урон снижен.")
             val reducedDamage = damage / 2
             enemy.takeDamage(reducedDamage)

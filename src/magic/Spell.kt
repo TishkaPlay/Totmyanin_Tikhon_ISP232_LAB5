@@ -1,17 +1,17 @@
 package magic
 
 class Spell(
-    val namee: String = "",
+    name: String = "",
     val w2: Int = 0,
     val h: Int = 0,
-    val symbol: String = ""
-) {
+    symbol: String = ""
+) : MagicEffect(name, symbol, duration = 10){
 
     constructor(name: String, size: Int, symbol: String) :
-            this(namee = name, w2 = size, h = size, symbol = symbol)
+            this(name = name, w2 = size, h = size, symbol = symbol)
 
     fun cast() {
-        println("Кастуем $namee!")
+        println("Кастуем $name!")
         repeat(h) {
             repeat(w2) {
                 print(symbol)
@@ -25,6 +25,6 @@ class Spell(
     }
 
     fun description(): String{
-       return "Заклинание $namee занимает область ${w2}X${h} и использует символ - $symbol"
+       return "Заклинание $name занимает область ${w2}X${h} и использует символ - $symbol"
     }
 }
