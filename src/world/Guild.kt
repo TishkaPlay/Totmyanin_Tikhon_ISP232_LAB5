@@ -1,7 +1,9 @@
 package world
 
+import world.Mission
+
 fun main() {
-    val quest = Quest("Поиск артефакта", 3, 800, "Средний")
+/*    val quest = Quest("Поиск артефакта", 3, 800, "Средний")
     val contract = Contract("Защита каравана", "Гильдия купцов", "Охрана груза", 1200)
     val specialOp = SpecialOperation("Операция - 'Тень'",2500, 2, isCovert = true)
 
@@ -18,7 +20,7 @@ fun main() {
     println("Название: ${specialOp.title}")
     specialOp.showReward()
 
-    /*val exit = Quest(title = "Побег из замка", 5, 700, "Сложный")
+    val exit = Quest(title = "Побег из замка", 5, 700, "Сложный")
     println("Квест сложный? - ${exit.isHard()}")
     val quest = Quest(title = "Охота на гоблинов", 2, 3400, "легкий")
     quest.printInfo()
@@ -58,4 +60,16 @@ fun main() {
             q.printInfo()
         }
     }*/
+
+    val missions: List<Mission> = listOf<Mission>(
+        Quest(title = "Охота на монстров", duration = 3, reward = 600,difficulty = "Средний"),
+        SpecialOperation(title = "Ночной рейд", reward = 1500, requiredClearance = 2, isCovert = true),
+        Contract(title = "Сопровождение каравана", clientNane = "Гильдия Торговцев", taskDescription = "Доставить груз", reward = 800, isUrgent = true)
+    )
+
+    for (mission in missions) {
+        mission.describe()
+        println("Высокая награда? ${if (mission.isHighReward()) "Да" else "Нет"}")
+        println()
+    }
 }

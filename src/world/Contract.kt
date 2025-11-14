@@ -7,10 +7,8 @@ class Contract(
     reward: Int,
     val isUrgent: Boolean = false
 ): Mission(title,reward){
-    fun printContractInfo() {
-        println("Заказчик: $clientNane")
-        println("Задача: $taskDescription")
-        println("Награда: $reward")
-        println("Срочность: ${if (isUrgent) "Срочно!" else "Обчный контракт"}")
+
+    override fun describe() {
+        println("Контракт от $clientNane: $taskDescription (${if (isUrgent) "СРОЧНО" else "Обычный"}), награда: $reward")
     }
 }

@@ -7,21 +7,22 @@ class Quest(
     var difficulty: String
 ) : Mission(title, reward){
 
-    fun printInfo() {
-        println("Название квеста: ${this.title} Время выполнения: ${this.duration} Награда: ${this.reward} золотых Уровень сложности: ${this.difficulty}")
+    //fun printInfo() {
+    //    println("Название квеста: ${this.title} Время выполнения: ${this.duration} Награда: ${this.reward} золотых Уровень сложности: ${this.difficulty}")
+    //}
 
+    override fun describe() {
+        println("Квест '$title' на $duration часов, сложность: $difficulty, награда: $reward золотых")
+    }
+
+    fun goldPerHour(): Int{
+        require(duration >= 0) {
+            "Длительность не может быть отрицательной!"
+        }
+        return if (duration == 0) 0 else reward / duration
     }
 
     fun isHard(): Boolean {
         return difficulty.lowercase() == "сложный"
     }
-
-    fun goldPerHour(): Int{
-        require(duration >= 0 && reward >= 0) {
-            "Длительность и награда не могут быть отрицательными!"
-        }
-        if (duration == 0) return 0
-        return reward / duration
-    }
 }
-
