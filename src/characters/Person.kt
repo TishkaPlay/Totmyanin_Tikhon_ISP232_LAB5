@@ -1,6 +1,7 @@
 package characters
 
 import world.Quest
+import world.QuestType
 
 fun main() {
 /*    val hero1 = Hero("Артур", "мужской", "оружейник", 4, "Вода", 30, 30)
@@ -98,7 +99,6 @@ fun main() {
     println(dragon.dropLoot())
     dragon.takeDamage(150)
 
-*/
     val enemy: GameCharacter = Enemy("Джин")
     val hero: GameCharacter = Hero("Наруто")
     val npc: GameCharacter = NPC("Торговец")
@@ -106,6 +106,14 @@ fun main() {
     (enemy as Enemy).takeDamage(20)
     enemy.takeDamage(20)
     println(enemy.name)
+*/
+    val trader = Trader("Ральф")
 
+    trader.addQuest(Quest("Собрать травы", 2, 50, "Лёгкий", QuestType.DELIVERY))
+    trader.addQuest(Quest("Убить волков", 3, 100, "Средний", QuestType.ELIMINATION))
 
+    trader.showAvailableQuests()
+
+    val selectQuest = trader.giveQuest(1)
+    selectQuest.describe()
 }

@@ -1,7 +1,5 @@
 package world
 
-import world.Mission
-
 fun main() {
 /*    val quest = Quest("Поиск артефакта", 3, 800, "Средний")
     val contract = Contract("Защита каравана", "Гильдия купцов", "Охрана груза", 1200)
@@ -59,10 +57,10 @@ fun main() {
         for (q in quests) {
             q.printInfo()
         }
-    }*/
+    }
 
     val missions: List<Mission> = listOf<Mission>(
-        Quest(title = "Охота на монстров", duration = 3, reward = 600,difficulty = "Средний"),
+        Quest(title = "Охота на монстров", duration = 3, reward = 600, "Средний"),
         SpecialOperation(title = "Ночной рейд", reward = 1500, requiredClearance = 2, isCovert = true),
         Contract(title = "Сопровождение каравана", clientNane = "Гильдия Торговцев", taskDescription = "Доставить груз", reward = 800, isUrgent = true)
     )
@@ -72,4 +70,74 @@ fun main() {
         println("Высокая награда? ${if (mission.isHighReward()) "Да" else "Нет"}")
         println()
     }
+
+    val escortQuest = Quest(
+        title = "Сопроводи торговца до деревни",
+        4,
+        120,
+        "Средний",
+        questType = QuestType.ESCORT
+    )
+    escortQuest.printInfo()
+    escortQuest.describe()
+
+    val deliveryQuest = Quest(
+        title = "Доставить посылку для торговца",
+        2,
+        80,
+        "Лёгкий",
+        questType = QuestType.DELIVERY
+    )
+
+    deliveryQuest.printInfo()
+    deliveryQuest.describe()
+
+    val bossQuest = Quest(
+        "Победить дракона и получить его яйцо",
+        10,
+        1500,
+        "Очень сложно",
+        questType = QuestType.BOSSFIGHT
+    )
+
+    bossQuest.printInfo()
+    bossQuest.describe()
+
+    val turismQuest = Quest(
+        "Подняться на гору и исследовать её ради клада",
+        5,
+        500,
+        "Сложно",
+        questType = QuestType.EXPLORE
+    )
+
+    turismQuest.printInfo()
+    turismQuest.describe()
+
+    val quest = listOf(Quest(
+        "Доставить письмо",
+        1,
+        50,
+        "Легко",
+        questType = QuestType.DELIVERY
+    ),
+        Quest("Исследовать остров",
+            4,
+            500,
+            "Средне",
+            questType = QuestType.EXPLORE))
+
+    fun showonlyexplore(quest: List<Quest>) {
+        val filt = quest.filter { it.questType == QuestType.EXPLORE }
+
+        if (filt.isEmpty()) {
+            println("Нет EXPLORE квестов.")
+        } else {
+            println("Найдено!")
+            filt.forEach { quest -> quest.describe() }
+        }
+    }
+
+    showonlyexplore(quest)
+    */
 }
